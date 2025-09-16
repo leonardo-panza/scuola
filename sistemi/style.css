@@ -1,0 +1,29 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color: gainsboro;
+    height: 200px;
+    text-align: center;
+    size: 50px;
+}
+
+footer{
+    margin-top: 100%;
+    background-color: gainsboro;
+    text-align: center;
+    height: 50px;
+}
+
+.output{
+    margin-top: 50px;
+    height: 100px;
+    width: 200px;
+    border: 3px solid rgb(156, 145, 145);
+    border-radius: 5%;
+}
+
+section{
+    margin-bottom: 50px;
+}
