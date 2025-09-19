@@ -1,0 +1,37 @@
+Cavo dritto: dispositivi di lvl diverso
+Cavo incrociato: dispositivi di lvl uguale
+
+Dispositivi:
+
+lvl 1 HUB
+lvl2 switch
+lvl 3 router
+
+lvl 7 PC
+
+IP: 4 byte concatenati separati da punto (0-255)
+Maschera: formata da 4 byte separati da punto, tutti i byte ba 1 devono stare a sinistra
+
+Maschere corrette: 
+00000000 0
+10000000 128
+11000000 192
+11100000 224
+11110000 240
+11111000 248
+11111100 252
+11111110 254
+11111111 255
+Tutti gli altri numeri non possono esistere
+
+    |    IP   |
+Es: 172.16.0.5/19
+|   metto 19 byte da 1   |
+
+11111111.11111111.11100000.0000000
+255.255.224.0
+
+L'HUB riceve il messaggio e lo manda a tutti i dispositivi connessi che capiscono da soli se il messaggio è per loro. L'HUB non ha memoria e manderà per sempre i messaggi a tutti i dispositivi, ciò provoca molto traffico.
+
+Lo switch impara dal traffico che passa e memorizza gli indirizzi, così il 2° messaggio lo manderà esclusivamente ad destinatario, grazie ad una MAC table che memorizza gli indirizzi MAC dei dispositivi e li associa alle proprie porte.
+
