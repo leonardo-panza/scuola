@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(169, 216, 173);
+    color: rgb(59, 99, 41);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+
+td{
+    text-align: center; 
+    padding: 3px;
+}
+
+th{
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#header{
+    color: white;
+    background-color: blue;
+}
+
+td,th{
+    border: 1px solid black;
+}
+
+#riga1{background-color: rgb(59, 99, 41); color: rgb(169, 216, 173)}

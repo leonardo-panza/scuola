@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(169, 216, 173);
+    color: rgb(59, 99, 41);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+
+a{color: black; font-weight: bold;}
+
+footer{
+    text-align: center;
+    color: rgb(169, 216, 173);
+    background-color: rgb(59, 99, 41);
+    padding: 10px;
+}
