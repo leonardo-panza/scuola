@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(176, 202, 170);
+    color: rgb(53, 85, 38);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input{
+    transition: 200ms;
+}
+
+input:focus{
+    padding:10px;
+    background-color: yellow;
+}
