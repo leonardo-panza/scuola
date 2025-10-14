@@ -1,0 +1,28 @@
+
+body{
+    background-color: rgb(23, 150, 86);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input{
+    margin-top: 10px;
+    padding: 10px;
+}
+.input:focus{
+    transition: 300ms;
+    background-color: rgb(109, 212, 161);
+}
+
+#binario{
+    opacity: 0;
+    font-weight: bold;
+}
+
+.elenco-risultati{
+    margin-top: 10px;
+    opacity:0;
+    background-color: white;
+    padding: 10px;
+    transition: 300ms;
+}
+

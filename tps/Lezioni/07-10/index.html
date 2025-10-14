@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio</title>
+</head>
+<body>
+    
+    <input type="button" id="id_butt" value="Bottone">
+
+    <ul id="elenco">
+
+    </ul>
+
+    <script>
+        //Per comodità usiamo liste omogenee (solo 1 tipo)
+        const lista = ["Cane", "Gatto", "Pappagallo", "Criceto", "Marmotta"];
+        const bottone = document.querySelector("#id_butt");
+        bottone.addEventListener("click", funz_butt);
+
+        function funz_butt(){
+            const elenco = document.querySelector("#elenco");
+            for(let i = 0; i<lista.length; i++){
+
+                let itema = document.createElement("li");
+                    itema.textContent = lista[i];
+                    elenco.prepend(itema);
+
+            }
+        }
+    </script>
+</body>
+</html>
