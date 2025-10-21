@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione diurna</title>
+</head>
+<body>
+    
+    <input type="button" id="butt" value="Cliccami se hai il coraggio buttto f...">
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        function saluta_tutti(){
+            alert("Ciao a tutti i forci di Aldo Filter")
+        }
+
+        //saluta_tutti()
+
+        //Funzione con parametri
+        function saluta_due_persone(persona1, persona2){
+            //apice grave per alt + 96, Stringa interpolata
+            alert("Ciao " + persona1 + " e " + persona2)
+        }
+
+        //Parametri di default
+        //da dx a sx
+        function saluta_due_persone2(persona1 = "Pippo", persona2 = "Pluto"){
+            alert("Ciao " + persona1 + " e " + persona2)
+        }
+
+
+        //operatore rest
+        //si può usare un solo rest per definizione e deve essere tassativamente
+        //L'ultimo parametro passato
+
+        function saluta(...persone){
+            s="Ciao a ";
+            for(const persona of persone)
+            s += persona + " ";
+
+            alert(s)
+        }
+
+        let bottone = document.querySelector("#butt");
+
+        //FUNZIONI ANONIME: no nome e vengono eseguite una sola volta
+        bottone.addEventListener("click", () => alert("Ciao a tutti"))
+        const x = saluta;
+
+    </script>
+</body>
+</html>

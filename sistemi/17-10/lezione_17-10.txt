@@ -1,0 +1,2 @@
+DNS - Meccanismo che traduce gli url dei siti in indirizzi ip.
+

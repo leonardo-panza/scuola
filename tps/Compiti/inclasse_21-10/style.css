@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(216, 180, 133);
+}
+
+input{
+    padding: 10px;
+}
+
+#nome:focus{
+    background-color: rgb(216, 212, 206);
+    transition: 300ms;
+}
+
+#eta:focus{
+    background-color: rgb(216, 212, 206);
+    transition: 300ms;
+}
+
+#mail:focus{
+    background-color: rgb(216, 212, 206);
+    transition: 300ms;
+}
+
+hr{
+    color: black;
+    border: 0.4px solid black;
+}
+
+#validita_mail{
+    opacity: 0;
+}
+
+#campo_errore_ip{
+    opacity: 1;
+}
