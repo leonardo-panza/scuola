@@ -1,0 +1,7 @@
+IP: 192.168.0.100
+Sub. mask: 255.255.255.0
+Def. gateway: 192.168.0.1
+
+Sì, l'indirizzo PC0 è dentro questo intervallo
+
+Il punteggio è 100%
