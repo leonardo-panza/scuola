@@ -1,0 +1,8 @@
+2D: L'ID fisico del computer è 00E0.B061.EB11, altro nome è indirizzo MAC
+2E: L'IP del computer è: 192.168.2.100
+2F: 255.255.255.0
+2G: 192.168.3.100
+2H: 192.168.3.100, per risolvere i nomi di dominio (tradurre www.esempio.com nel suo indirizzo IP)
+
+
+

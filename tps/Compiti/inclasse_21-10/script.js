@@ -1,24 +1,36 @@
 
 let bottone = document.querySelector("#butt");
 let bottone_ip = document.querySelector("#butt_id");
+let campo_nome = document.querySelector("#nome");
+let campo_eta = document.querySelector("#eta");
+let campo_mail = document.querySelector("#mail");
 
-bottone_ip.addEventListener("click", validaIp)
-bottone.addEventListener("click", controlli)
+bottone.addEventListener("click", controlli);
+bottone_ip.addEventListener("click", validaIp);
 
 function controlli(){
 
-    let campo_nome = document.querySelector("#nome");
-    let campo_eta = document.querySelector("#eta");
-    let campo_mail = document.querySelector("#mail");
     let errore_mail = document.querySelector("#validita_mail");
     let errore = "";
 
     let eta = campo_eta.value;
-    let mail = campo_mail.value;
-    let nome = campo_nome.value;
+    let mail = campo_mail.value.trim();
+    let nome = campo_nome.value.trim();
 
     if(nome.length<2){
         errore += "Nome non valido, deve contenere almeno due caratteri.\n";
+    }
+    
+    //A-Z può contenere lettere in maiuscolo
+    //a-z può contenere lettere in minuscolo
+    //À-ÿ può contenere lettere accentate
+    //\s può contenere spazi (Di Lauro, De Rossi)
+    //+ può contenere 1+ lettere dei tipi specificati
+    //^ inizio della stringa
+    //$ fine della stringa
+
+    if(/^[A-Za-zÀ-ÿ\s]+$/.test(nome)==false){
+        errore += "Nome in formato non accettabile.\n";
     }
 
     if(eta<14 || eta>99){
@@ -59,19 +71,24 @@ function validaIp(){
     let numeri = document.querySelectorAll(".input");
     let campo_errore = document.querySelector("#campo_errore_ip")
     let validita = true;
+    
+    for(let input of numeri){
+        
+        if(input.value == ""){
+            validita = false;
+            break;
+        }
 
-    for(let numero of numeri){
-        numero = numero.value;
-        if(numero<0 || numero>255 || !Number.isInteger(numero)){
+        let numero = Number(input.value);
+        if(numero<0 || numero>255 || isNaN(numero) || !Number.isInteger(numero) || numero == null){
             validita = false;
         }
     }
 
+    campo_errore.style.opacity = 1;
     if(validita == false){
-        campo_errore.style.opacity = 1;
         campo_errore.textContent = "Indirizzo IP non valido";
     }else{
-        campo_errore.style.opacity = 1;
         campo_errore.textContent = "Indirizzo IP valido";
     }
 }   
