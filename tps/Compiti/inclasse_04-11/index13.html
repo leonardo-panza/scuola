@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 13</title>
+</head>
+<body>
+    <form id="form1">
+        <input id="email1" placeholder="Email">
+        <button type="submit">Invia</button>
+    </form>
+    <div id="msg" aria-live="polite"></div>
+    <script>
+        let form1 = document.getElementById("form1");
+        let email1 = document.getElementById("email1");
+        let msg = document.getElementById("msg");
+
+        form1.addEventListener("submit", e => {
+            e.preventDefault();
+            //Se vera assegna il 1o valore, se falsa il 2o
+            //                condizione          se   vera...           falsa...
+            let testo = email1.value.includes("@") ? "Email valida" : "Email non valida";
+            msg.textContent = testo;
+        });
+    </script>
+</body>
+</html>

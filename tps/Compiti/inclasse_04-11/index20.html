@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 20</title>
+    <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+    <form id="reg">
+        <input id="nome" placeholder="Nome">
+        <input id="email" placeholder="Email">
+        <input id="pass" type="password" placeholder="Password">
+        <button type="submit">Registrati</button>
+    </form>
+    <div id="msg" aria-live="polite"></div>
+    <script>
+    let reg = document.getElementById("reg");
+    let msg = document.getElementById("msg");
+    let utenti = [];
+
+    reg.addEventListener("submit", e => {
+        e.preventDefault();
+        let nome = document.getElementById("nome");
+        let email = document.getElementById("email");
+        let pass = document.getElementById("pass");
+        let valido = true;
+
+        [nome, email, pass].forEach(campo => {
+            if (campo.value.trim() === "") {
+                campo.classList.add("err");
+                valido = false;
+            } else {
+                campo.classList.remove("err");
+            }
+        });
+
+        if (valido) {
+            utenti.push({ nome: nome.value, email: email.value });
+            msg.textContent = "Registrazione completata!";
+            msg.className = "ok";
+            reg.reset();
+        } else {
+            msg.textContent = "Compila tutti i campi.";
+            msg.className = "";
+        }
+    });
+    </script>
+</body>
+</html>

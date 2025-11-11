@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 19</title>
+</head>
+<body>
+    <input id="search" placeholder="Cerca nome">
+    <ul id="lista"></ul>
+    <script>
+        let rubrica = [
+            { nome: "Anna", telefono: "123" },
+            { nome: "Luca", telefono: "456" },
+            { nome: "Marco", telefono: "789" }
+        ];
+
+        let lista = document.getElementById("lista");
+        let search = document.getElementById("search");
+
+        function mostra(contatti) {
+            lista.innerHTML = "";
+            contatti.forEach(c => {
+                let li = document.createElement("li");
+                li.textContent = c.nome + ": " + c.telefono;
+                lista.appendChild(li);
+            });
+        }
+
+        search.addEventListener("input", () => {
+            let filtro = search.value.toLowerCase();
+            let risultati = rubrica.filter(c => c.nome.toLowerCase().includes(filtro));
+            mostra(risultati);
+        });
+
+        mostra(rubrica);
+    </script>
+</body>
+</html>

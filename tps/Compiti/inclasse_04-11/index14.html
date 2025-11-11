@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 14</title>
+</head>
+<body>
+    <form>
+        <input id="nome" placeholder="Nome">
+        <input id="email" placeholder="Email">
+        <label><input type="checkbox" id="privacy"> Accetto la privacy</label>
+        <button id="submit" disabled>Iscriviti</button>
+    </form>
+    <script>
+        let privacy = document.getElementById("privacy");
+        let submit = document.getElementById("submit");
+        privacy.addEventListener("change", () => {
+            submit.disabled = !privacy.checked;
+        });
+    </script>
+</body>
+</html>

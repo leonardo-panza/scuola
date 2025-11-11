@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 17</title>
+</head>
+<body>
+    <input id="campo" placeholder="Testo">
+    <button onclick="controlla()">Controlla</button>
+    <script>
+        function validaCampo(input, minLength) {
+            return input.trim().length >= minLength;
+        }
+        function controlla() {
+            let valore = document.getElementById("campo").value;
+            alert(validaCampo(valore, 7));
+        }
+    </script>
+</body>
+</html>

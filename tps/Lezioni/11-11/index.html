@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione di oggi</title>
+
+</head>
+<body>
+    <h1>Esercitazione Chart.js</h1>
+    <!--Disegno il grafico qui-->
+    <canvas id="grafico">
+
+
+
+
+
+    </canvas>
+
+    <!--Importo la libreria richiesta-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        //Seleziono il grafico
+        const ctx = document.querySelector("#grafico");
+
+        //Specie di oggetto, ma è una serie di informazioni 
+        // tutte insieme, una sorta di dizionario di python
+
+        //I dati del grafico
+        const data = {
+            //asse orizzontale
+            labels : ["ITA", "STO", "ING", "MAT", "INF", "SER", "TPI", "SMS"],
+            datasets : [{
+                label : "Voti",
+                data : [5, 9, 7, 7, 9, 6, 7, 7],
+                backgroundColor: ["#F233A3", "#E64BB3", "#D234D3", "#F465DF"],
+                borderColor: "gold",
+                borderWidth: 3,
+                pointRadius: 5
+            }]
+        }
+
+        new Chart(ctx, {
+            type: "bar",
+            data: data,
+            options: {
+                plugins : {
+                    title: {display:true, text:"Voti di Panza Leonardo 4Ai"},
+                    legend: {position: "bottom"}
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

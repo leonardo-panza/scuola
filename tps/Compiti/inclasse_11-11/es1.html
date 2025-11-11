@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chart.js — Linee</title>
+  <style>
+    body {
+      font-family: system-ui;
+      margin: 2rem;
+      max-width: 900px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Temperature massime e minime Paladina</h1>
+  <canvas id="chart"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('chart');
+    const data = {
+      labels: ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'],
+      datasets: [
+        {
+          label: 'Temperatura massima',
+          data: [19, 17, 12, 16, 27, 14, 15],
+          tension: 0,
+          pointRadius: 7
+        },
+        {
+          label: 'Temperatura minima',
+          data: [5, 7, 2, 4, 12, 5, 3],
+          tension: 0,
+          pointRadius: 7
+        }
+      ]
+    };
+
+    new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: false,
+            ticks: {
+              callback: v => v + '°C'
+            },
+            title: {
+              display: true,
+              text: '°C'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Temperature massime e minime Paladina'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

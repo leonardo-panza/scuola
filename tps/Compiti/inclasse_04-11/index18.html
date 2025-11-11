@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 18</title>
+    <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+    <form id="form">
+        <input id="nome" placeholder="Nome">
+        <input id="email" placeholder="Email">
+        <textarea id="messaggio" placeholder="Messaggio"></textarea>
+        <button type="submit">Invia</button>
+    </form>
+    <div id="feedback" aria-live="polite"></div>
+    <script>
+        let form = document.getElementById("form");
+        let feedback = document.getElementById("feedback");
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            let nome = document.getElementById("nome");
+            let email = document.getElementById("email");
+            let messaggio = document.getElementById("messaggio");
+            let valido = true;
+
+            [nome, email, messaggio].forEach(campo => {
+                if (campo.value.trim() === "") {
+                    campo.classList.add("err");
+                    valido = false;
+                } else {
+                    campo.classList.remove("err");
+                }
+            });
+
+            feedback.textContent = valido ? "Form inviata con successo!" : "Compila tutti i campi.";
+            feedback.className = valido ? "ok" : "";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 10</title>
+</head>
+<body>
+    <input id="ip" placeholder="Inserisci IP">
+    <button onclick="validaIP()">Controlla IP</button>
+    <script>
+    function validaIP() {
+        let ip = document.getElementById("ip").value.trim();
+        let parti = ip.split(".");
+        let valido = parti.length === 4 && parti.every(n => {
+            let num = Number(n);
+            return num >= 0 && num <= 255;
+        });
+        alert(valido ? "IP valido" : "IP non valido");
+    }
+    </script>
+</body>
+</html>

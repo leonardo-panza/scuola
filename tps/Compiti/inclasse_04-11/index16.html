@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 16</title>
+</head>
+<body>
+    
+    <ul id="lista">
+
+    </ul>
+
+
+
+    <script>
+        const lista = document.getElementById("lista");
+        let list = ["T90M", "M1A1", "2A7V", "Strv 122+", "Type 10"];
+
+        function aggiornaLista(){
+            lista.innerHTML = "";
+            list.forEach((elemento, i) => {
+                let punto = document.createElement("li");
+                punto.textContent = elemento;
+                punto.id = i;
+
+                let butt_rmv = document.createElement("button");
+                butt_rmv.textContent="Elimina";
+                butt_rmv.id = i;
+
+                butt_rmv.onclick = () => {
+                    list.splice(butt_rmv.id, 1);
+                    aggiornaLista();
+                };
+
+                punto.appendChild(butt_rmv);
+                lista.appendChild(punto);
+            });
+        }
+
+        aggiornaLista();
+    </script>
+</body>
+</html>

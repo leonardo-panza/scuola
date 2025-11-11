@@ -30,7 +30,6 @@ function aggiornaLista(){
         butt_rmv.id = i;
 
         butt_rmv.onclick = () => {
-            console.log(butt_rmv.id);
             att.splice(butt_rmv.id, 1);
             aggiornaLista();
         };

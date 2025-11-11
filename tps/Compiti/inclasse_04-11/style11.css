@@ -1,0 +1,3 @@
+.attivo { border: 2px solid blue; }
+.err { border: 2px solid red; background-color: rgba(222, 84, 84, 0.384);}
+.ok { color: green; }

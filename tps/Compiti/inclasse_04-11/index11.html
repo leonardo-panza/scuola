@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 11</title>
+    <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+    <input id="campo" class="input">
+    <script>
+        let campo = document.getElementById("campo");
+        campo.addEventListener("focus", () => campo.classList.add("attivo"));
+        campo.addEventListener("blur", () => campo.classList.remove("attivo"));
+    </script>
+</body>
+</html>

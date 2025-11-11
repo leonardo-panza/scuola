@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es 15</title>
+    <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+    <textarea id="msg" placeholder="Scrivi qui..."></textarea>
+    <p id="count">0 caratteri</p>
+    <script>
+        let msg = document.getElementById("msg");
+        let count = document.getElementById("count");
+
+        msg.addEventListener("input", () => {
+            count.textContent = msg.value.length + " caratteri";
+            msg.classList.remove("err");
+        });
+
+        msg.addEventListener("blur", () => {
+            if (msg.value.length < 30) msg.classList.add("err");
+        });
+    </script>
+</body>
+</html>

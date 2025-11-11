@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chart.js — Barre base</title>
+    <style>
+        body {
+        font-family: system-ui;
+        margin: 2rem;
+        max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+  <h1>Barre (base)</h1>
+  <canvas id="chart"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('chart');
+        const data = {
+            labels: ['Lun', 'Mar', 'Mer', 'Gio', 'Ven'],
+            datasets: [
+                {
+                    label: 'Visitatori',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: "Incassi (€)",
+                    data: [32, 37, 29, 12, 1],
+                    backgroundColor: "rgba(255, 100, 0, 0.5)",
+                    borderColor: "rgba(255, 100, 0, 1)",
+                    borderWidth: 1,
+                    barThickness: 30
+                }
+            ]
+        };
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                legend: {
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'Settimana'
+                }
+                },
+                scales: {
+                y: {
+                    beginAtZero: true
+                },
+                x:{
+                    title:{
+                        display: true,
+                        text:"Giorno della settimana"
+
+                    }
+                }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
