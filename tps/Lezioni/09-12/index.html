@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione di oggi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tabella della classe</h1>
+    <form action="">
+        <p>
+            <label for="cognome">
+                <input type="text" name="cognome" id="id_cognome" placeholder="Cognome...">
+            </label>
+        </p>
+        <p>
+            <label for="nome">
+                <input type="text" name="nome", id="id_nome", placeholder="Nome...">
+            </label>
+        </p>
+        <p>
+            <label for="media">
+                <input type="text" name="media", id="id_media", placeholder="Media...">
+            </label>
+        </p>
+
+        <div id="checkbox_zone">
+            <input type="checkbox" name="info" id="info">
+            <label for="info">Informatica </label><br>
+            <input type="checkbox" name="sis" id="sis">
+            <label for="sis">Sistemi e reti</label><br>
+            <input type="checkbox" name="sms" id="sms">
+            <label for="sms">Scienze motorie sportive</label><br>
+            <input type="checkbox" name="tps" id="tps">
+            <label for="tps">Tecnologie e Progettazione di Sistemi Informatici e Telecomunicazioni</label><br>
+            <input type="checkbox" name="tele" id="tele">
+            <label for="tele">Telecomunicazioni</label><br>
+            <input type="checkbox" name="ita" id="ita">
+            <label for="ita">Lingua e letteratura italiana</label><br>
+        </div>
+
+        <input type="button" value="Invio" id="id_butt">
+    </form>
+    <table>
+        <th>Cognome</th>
+        <th>Nome</th>
+        <th>Media</th>
+        <th>Debiti</th>
+        <tbody id="id_table">
+
+        </tbody>
+    </table>
+
+    <article>
+        <h3>Ciao bello</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, cum facere fugit cupiditate quibusdam impedit odit voluptate odio totam laborum, optio dolorem placeat nostrum, vero eaque! Suscipit libero harum ipsa?</p>
+    </article>
+    <article>
+        <h3>Ciao bello</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, cum facere fugit cupiditate quibusdam impedit odit voluptate odio totam laborum, optio dolorem placeat nostrum, vero eaque! Suscipit libero harum ipsa?</p>
+    </article>
+    <article>
+        <h3>Ciao bello</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, cum facere fugit cupiditate quibusdam impedit odit voluptate odio totam laborum, optio dolorem placeat nostrum, vero eaque! Suscipit libero harum ipsa?</p>
+    </article>
+
+    <script>
+
+        //Posso modificarlo dalla console con oggetto.nome = ...
+        let oggetto = {
+            cognome : "Panza",
+            nome : "Leonardo",
+            media: 7.56,
+            debiti: ["Italiano"],
+        }
+
+        let quarta_ai = [
+            oggetto,
+            {
+                cognome: "Raza",
+                nome: "Syed Aylia",
+                media: 6.78,
+                debiti: ["Informatica", "Lingua e letteratura italiana", "Scienze motorie e sportive"]
+            },
+            {
+                cognome: "Pasta",
+                nome: " Nicola",
+                media: 7.28,
+                debiti: ["Scienze motorie e sportive"]
+            }
+        ]
+        
+        /*Formato JSON - trasformo in stringa (chiavi in "")
+        let stringa_json = JSON.stringify(quarta_ai, null, 2)
+        console.log(stringa_json)
+
+        let oggetto2 = JSON.parse(stringa_json);
+        console.log(oggetto2)
+        */
+
+        window.addEventListener('load', ()=> {
+            aggiorna_tabella();
+        })
+
+        function aggiorna_tabella(){
+            quarta_ai.forEach(elemento => {
+                let td1 = document.createElement("td");
+                td1.textContent = elemento.cognome;
+                let td2 = document.createElement("td");
+                td2.textContent = elemento.nome;
+                let td3 = document.createElement("td");
+                td3.textContent = elemento.media;
+                let td4 = document.createElement("td");
+                td4.textContent = JSON.stringify(elemento.debiti);
+                let row = document.createElement("tr");
+                row.appendChild(td1);
+                row.appendChild(td2);
+                row.appendChild(td3);
+                row.appendChild(td4);
+                let tabella = document.getElementById("id_table");
+                tabella.appendChild(row);
+            })
+        }
+
+        function creaStudente(){
+            let studente = {};
+            studente.nome = document.getElementById("id_nome").value;
+            studente.cognome = document.getElementById("id_cognome").value;
+            studente.media = Number(document.getElementById("id_media").value);
+            let temp = ["", "", "", "", "", ""];
+            let ultima = 0;
+            console.log(document.getElementById("info").value)
+            console.log(temp)
+            if(document.getElementById("info").checked){temp[ultima] ="Informatica"; ultima++;}
+            if(document.getElementById("sis").checked) {temp[ultima] = "Sistemi e reti";ultima++;}
+            if(document.getElementById("sms").checked) {temp[ultima] = "Scienze motorie e sportive"; ultima++;}
+            if(document.getElementById("tps").checked) {temp[ultima] = "Tecnologie e progettazione di sistemi informatici e telecomunicazioni";ultima++;}
+            if(document.getElementById("tele").checked) {temp[ultima] = "Telecomunicazioni";ultima++;}
+            if(document.getElementById("ita").checked){ temp[ultima] = "Lingua e letteratura italiana";ultima++;}
+            
+            studente.debiti = Array(ultima)
+            console.log(studente.debiti);
+            //TODO for che carica i risultati in un array
+            
+            return studente;
+        }
+
+        let btn = document.getElementById("id_butt");
+        btn.addEventListener("click", ()=>{
+            quarta_ai.push(creaStudente());
+            let corpo_tabella = document.getElementById("id_table");
+            corpo_tabella.innerHTML = "";
+            aggiorna_tabella();
+        })
+
+
+
+        //console.log(quarta_ai)
+    </script>
+</body>
+</html>
