@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione di oggi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Sequenzialità, Callback e Promise</h1>
+
+    <div id="output">
+        <div id="test2">
+
+        </div>
+    </div>
+    <div id="contatore">
+
+    </div>
+
+    <div id="cronometro">
+
+    </div>
+    <input type="button" value="Avvia cronometro" id="bottone">
+    <script>
+        const div2 = document.getElementById("test2");
+        const timer = document.getElementById("contatore");
+        const crono = document.getElementById("cronometro");
+        const butt = document.getElementById("bottone");
+        let num = 0;
+        let perc1 = 0;
+        let perc2 = 1;
+        for(let i=0; i<=100; i++){
+            setTimeout(()=>{
+                div2.textContent = num + "%";
+                num++;
+                if(perc1<1){
+                    perc1 += 0.02;
+                }else{
+                    perc2 -= 0.02;
+                }
+                div2.style.width = (num*2) + "px";
+                div2.style.backgroundColor = "rgb(" + 255*perc2 + ", " + 120*perc1 + ", 0)";
+            }, (i*100))
+        }
+
+        let numero = 10;
+        let conto = numero;
+        for(let i = 0; i<=numero; i++){
+            setTimeout(()=>{
+                timer.textContent = conto;
+                conto--;
+            }, (1000*i))
+        }
+
+        crono.textContent = 0;
+        butt.addEventListener("click", ()=>{
+            for(let i = 0; i<=5; i++){
+                setTimeout(()=>{
+                    crono.textContent = i;
+                    if(i==5){crono.textContent += "- cronometro fermato"}
+                }, (1000*i))
+            }
+
+        });
+
+    </script>
+</body>
+</html>

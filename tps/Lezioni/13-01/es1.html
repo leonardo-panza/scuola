@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione di oggi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Sequenzialità, Callback e Promise</h1>
+
+    <div id="test">
+
+    </div>
+    <div id="test2">
+
+    </div>
+    <script>
+        const div = document.querySelector("#test");
+
+        setTimeout(()=>{
+            div.textContent = "Operazione completata";
+        }, 3000);  
+
+        div.textContent = "Pagina caricata";   
+        
+        const div2 = document.querySelector("#test2");
+        setTimeout(()=>{
+            div2.textContent += "- Operazione completata";
+        }, 3000);  
+
+        div2.textContent += "Pagina caricata ";
+        
+    </script>
+</body>
+</html>

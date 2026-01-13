@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione di oggi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Sequenzialità, Callback e Promise</h1>
+
+    <div id="test">
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        function funzione_di_panza(){
+            //Scrivi nel div#test
+            //Consecutivamente questi 3:
+            //Inizio
+            //Caricamento
+            //Fine
+            const div = document.querySelector("#test");
+            div.textContent += "Inizio";
+            div.textContent += "Caricamento";
+            div.textContent += "Fine";
+        }
+        const div = document.querySelector("#test");
+        div.textContent += "Inizio";
+
+        setTimeout(funzione_di_panza, 5000); //Tempo in ms
+        //Lancio e vado avanti. Quando finisce il timeout stampa, 
+        // ma nel mentre ha fatto altro.
+
+        div.textContent += "Fine";
+        //Uscita: InizioFine --- 5 secondi ---> InizioFineCaricamento
+    </script>
+</body>
+</html>
