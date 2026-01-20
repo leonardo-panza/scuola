@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coltelli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Consumo progressivo di un frigorifero con la porta aperta</h1>
+    </header>
+    <main>
+        <article class="iniziale">
+            <h3 class="titolo">Andresti a stazione armato o no?</h3>
+            <canvas id="grafico" class="sez_grafico">
+
+            </canvas>
+            <p class="paragrafo-sx">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptas accusantium possimus dignissimos tempora! Debitis aliquid cupiditate vero nesciunt sed reiciendis? Commodi harum ut facere cupiditate repellat? Odio, velit deserunt?</p>
+
+        </article>
+        
+        <article class="finale">
+            <h3 class="titolo">Conosci persone che girano armate?</h3>
+            <canvas id="grafico2" class="sez_grafico">
+
+            </canvas>
+            <p class="paragrafo-dx">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptas accusantium possimus dignissimos tempora! Debitis aliquid cupiditate vero nesciunt sed reiciendis? Commodi harum ut facere cupiditate repellat? Odio, velit deserunt?</p>
+        
+        </article>
+
+    </main>
+
+    <footer>
+        <h3>Realizzato da studenti, tutti i diritti negati</h3>
+    </footer>
+
+
+
+
+    <!--Importo la libreria-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--Deifinisco i grafici-->
+    <script>
+        const ctx = document.querySelector("#grafico");
+        const gtx = document.querySelector("#grafico2");
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+            labels: ['Conoscenze', 'Amici', 'Nessuno'],
+            datasets: [{
+                data: [9, 6, 4],
+                backgroundColor: [
+                'grey',
+                'rgb(79, 95, 95)',
+                'purple'
+                ],
+                borderWidth: 0
+            }]
+            },
+            options: {
+            responsive: true,
+            cutout: '50%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels:{
+                            color:'white'
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(gtx, {
+            type: 'doughnut',
+            data: {
+            labels: ['Armati', 'Non armati', 'Astenuti'],
+            datasets: [{
+                data: [0, 16, 1],
+                backgroundColor: [
+                'rgb(79, 95, 95)',
+                'purple',
+                'grey'
+                ],
+                borderWidth: 0
+            }]
+            },
+            options: {
+                responsive: true,
+                cutout: '50%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels:{
+                            color:'white'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
