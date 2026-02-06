@@ -14,3 +14,17 @@ div{
     width: 200px;
     padding: 0 12px 0 0;
 }
+
+#cronometro{
+    font-size: xx-large;
+}
+
+.sez_cron{
+    padding: 20px;
+    background-color: gainsboro;
+    border-radius: 20px;
+    box-shadow: 0 0 5px black;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 40rem;
+}

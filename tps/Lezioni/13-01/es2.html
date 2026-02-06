@@ -16,13 +16,15 @@
         </div>
     </div>
     <div id="contatore">
-
+        
     </div>
 
-    <div id="cronometro">
-
-    </div>
-    <input type="button" value="Avvia cronometro" id="bottone">
+    <section class="sez_cron">
+        <div id="cronometro">
+            
+        </div>
+        <input type="button" value="Avvia cronometro" id="bottone">
+    </section>
     <script>
         const div2 = document.getElementById("test2");
         const timer = document.getElementById("contatore");
@@ -54,15 +56,15 @@
             }, (1000*i))
         }
 
+        let tempo=5;
         crono.textContent = 0;
         butt.addEventListener("click", ()=>{
-            for(let i = 0; i<=5; i++){
+            for(let i = 0; i<=tempo; i++){
                 setTimeout(()=>{
                     crono.textContent = i;
-                    if(i==5){crono.textContent += "- cronometro fermato"}
+                    if(i==tempo){crono.textContent += "- cronometro fermato"}
                 }, (1000*i))
             }
-
         });
 
     </script>
