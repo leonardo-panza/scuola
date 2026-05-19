@@ -1,0 +1,6 @@
+1. Si perché gli switch con i trunk possono trasportare i messaggi da una rete all'altra, rendendo le vlan 10 logicamente collegate.
+2. Permettere lo scambio di messaggi tra vlan fisicamente separate (come la vlan 30)
+3. Non permette lo scambio di messaggi tra le vlan separate fisicamente
+4. Quando due LAN distinte devono comunicare l'una con l'altra
+5. Perché ogni VLAN deve essere una rete separata. 1 VLAN = 1 Subnet rende tutto più ordinato
+
